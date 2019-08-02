@@ -35,13 +35,13 @@ override func viewDidLoad()
   //get keyboard size
   if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
   
-  //get and set scrollview content inset
-  var contentInset:UIEdgeInsets = self.scrollView.contentInset
-  contentInset.bottom = keyboardSize.size.height
-  scrollView.contentInset = contentInset
-  
-  // re-layout
-  self.view.layoutIfNeeded()
+    //get and set scrollview content inset
+    var contentInset:UIEdgeInsets = self.scrollView.contentInset
+    contentInset.bottom = keyboardSize.size.height
+    scrollView.contentInset = contentInset
+
+    // re-layout
+    self.view.layoutIfNeeded()
   }
 }
 @objc func keyboardWillHide(notification: NSNotification) {
